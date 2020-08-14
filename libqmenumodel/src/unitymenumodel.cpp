@@ -455,7 +455,13 @@ QVariant UnityMenuModel::data(const QModelIndex &index, int role) const
 
         case TypeRole: {
             gchar *type;
-            if (gtk_menu_tracker_item_get_attribute (item, "x-canonical-type", "s", &type)) {
+            auto ret = gtk_menu_tracker_item_get_attribute (item, "x-ayatana-type", "s", &type);
+
+            // If we can't get x-ayatana-type, try legacy x-canonical-type type
+            if (!ret)
+                ret = gtk_menu_tracker_item_get_attribute (item, "x-canonical-type", "s", &type);
+
+            if (ret) {
                 QVariant v(type);
                 g_free (type);
                 return v;
