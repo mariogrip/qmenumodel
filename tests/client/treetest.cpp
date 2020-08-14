@@ -75,25 +75,25 @@ private Q_SLOTS:
         QCOMPARE(menu.rowCount(row3), 3);
         QCOMPARE(menu.data(row3, QMenuModel::Label).toString(), QString("menu3"));
 
-        QModelIndex row4 = row3.child(0, 0);
+        QModelIndex row4 = row3.model()->index(0, 0, row3);
         QVERIFY(row4.isValid());
         QCOMPARE(menu.rowCount(row4), 0);
         QCOMPARE(menu.data(row4, QMenuModel::Depth).toInt(), 1);
         QCOMPARE(menu.data(row4, QMenuModel::Label).toString(), QString("menu4"));
 
-        QModelIndex row5 = row3.child(1, 0);
+        QModelIndex row5 = row3.model()->index(1, 0, row3);
         QVERIFY(row5.isValid());
         QCOMPARE(menu.rowCount(row5), 2);
         QCOMPARE(menu.data(row5, QMenuModel::Depth).toInt(), 1);
         QCOMPARE(menu.data(row5, QMenuModel::Label).toString(), QString("menu5"));
 
-        QModelIndex row6 = row5.child(0, 0);
+        QModelIndex row6 = row5.model()->index(0, 0, row5);
         QVERIFY(row6.isValid());
         QCOMPARE(menu.rowCount(row6), 0);
         QCOMPARE(menu.data(row6, QMenuModel::Depth).toInt(), 2);
         QCOMPARE(menu.data(row6, QMenuModel::Label).toString(), QString("menu6"));
 
-        QModelIndex row7 = row5.child(1, 0);
+        QModelIndex row7 = row5.model()->index(1, 0, row5);
         QVERIFY(row7.isValid());
         QCOMPARE(menu.rowCount(row7), 0);
         QCOMPARE(menu.data(row7, QMenuModel::Depth).toInt(), 2);

@@ -18,6 +18,7 @@
  */
 
 #include "gtksimpleactionobserver.h"
+#include "gtkactionobservable.h"
 
 typedef GObjectClass GtkSimpleActionObserverClass;
 
