@@ -18,20 +18,6 @@ add_definitions(-DQT_NO_KEYWORDS)
 
 find_program(DBUS_RUNNER dbus-test-runner)
 
-# Cooverage tools
-OPTION(ENABLE_COVERAGE "Build with coverage analysis support" OFF)
-if(ENABLE_COVERAGE)
-    message(STATUS "Using coverage flags")
-    find_program(COVERAGE_COMMAND gcov)
-    if(NOT COVERAGE_COMMAND)
-        message(FATAL_ERROR "gcov command not found")
-    endif()
-    SET(CMAKE_C_FLAGS "-g -O0 -Wall --coverage")
-    SET(CMAKE_CXX_FLAGS "-g -O0 -Wall -std=c++11 --coverage")
-    SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage")
-    include(${CMAKE_SOURCE_DIR}/cmake/lcov.cmake)
-endif()
-
 add_subdirectory(libqmenumodel)
 
 # Tests Tools
@@ -61,3 +47,13 @@ if(GENERATE_DOC)
     endif()
 endif()
 
+# Coverage
+#####################################################################
+# Enable code coverage calculation with gcov/gcovr/lcov
+# Usage:
+#  * Switch build type to coverage (use ccmake or cmake-gui)
+#  * Invoke make, make test, make coverage (or ninja if you use that backend)
+#  * Find html report in subdir coveragereport
+#  * Find xml report feasible for jenkins in coverage.xml
+#####################################################################
+find_package(CoverageReport)
