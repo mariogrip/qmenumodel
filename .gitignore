@@ -41,3 +41,4 @@ debian/*.substvars
 debian/stamp-*
 
 *.user
+build
