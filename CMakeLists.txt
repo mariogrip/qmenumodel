@@ -1,5 +1,7 @@
 project(qmenumodel)
 
+set (PROJECT_VERSION "0.7.90")
+
 cmake_minimum_required(VERSION 2.8.9)
 
 # Standard install paths
