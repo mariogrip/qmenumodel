@@ -2,6 +2,8 @@ Source: qmenumodel
 Section: libs
 Priority: optional
 Maintainer: Marius Gripsgard <marius@ubports.com>
+Uploaders:
+ Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 Build-Depends: debhelper (>= 9.0.0),
                cmake (>= 2.8.9),
                cmake-extras,
