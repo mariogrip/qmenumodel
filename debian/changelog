@@ -1,3 +1,15 @@
+qmenumodel (0.7.90-0) UNRELEASED; urgency=medium
+
+  * Move qmenumodel from UBports' project context over to
+    Ayatana Indicators' project context. Same maintainers,
+    same people involved, but the project is now maintained
+    together with the other Indicators' related projects.
+  * Upstream version bump (to go along with the other
+    indicator related projects maintained by the Ayatana
+    Indicators project). Next official release will be 0.8.0.
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Sat, 15 Aug 2020 12:05:52 +0200
+
 qmenumodel (0.2.13+ubports1) xenial; urgency=medium
 
   [ Albert Astals Cid ]
