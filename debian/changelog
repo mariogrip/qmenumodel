@@ -1,4 +1,4 @@
-qmenumodel (0.7.90-0) UNRELEASED; urgency=medium
+qmenumodel (0.8.0-0) unstable; urgency=medium
 
   * Move qmenumodel from UBports' project context over to
     Ayatana Indicators' project context. Same maintainers,

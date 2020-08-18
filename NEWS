@@ -1,0 +1,9 @@
+Overview of changes in ayatana-indicator-session 0.8.0
+
+  * Move qmenumodel from UBports' project context over to
+    Ayatana Indicators' project context. Same maintainers,
+    same people involved, but the project is now maintained
+    together with the other Indicators' related projects.
+  * Upstream version bump (to go along with the other
+    indicator related projects maintained by the Ayatana
+    Indicators project). Next official release will be 0.8.0.
